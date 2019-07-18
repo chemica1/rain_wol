@@ -1,10 +1,8 @@
-import sys, os
+import sys
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
 
 
-class SetComputer(QWidget):
+class ComputerInfoPrint(QWidget):
 
 
     def __init__(self):
@@ -82,7 +80,6 @@ class SetComputer(QWidget):
         self.setLayout(self.layout)
 
         self.setWindowTitle('Line Editor')
-        self.show()
 
 
     def init_INFO(self):
@@ -207,5 +204,5 @@ class SetComputer(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = SetComputer()
+    ex = ComputerInfoPrint()
     sys.exit(app.exec_())

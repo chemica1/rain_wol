@@ -1,18 +1,23 @@
 import sys
+import time
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QDate, QTime, Qt
 from Com_Controll_Widget import ComputerListPrint
-from Com_Info_Widget import SetComputer
+from Com_Info_Widget import ComputerInfoPrint
 
 class MainWindow(QMainWindow): #메인윈도우에선 layout 못쓴다. 자체레이아웃을 갖고있기때문
 
     def __init__(self):
         super().__init__()
 
-
+        """
         ComputerListWidget = ComputerListPrint()
+        ComputerListWidget.computer_checkbox[1].toggle()
+        ComputerListWidget.computer_status[5].setText(ComputerListWidget.list_of_name[1])
+
         self.setCentralWidget(ComputerListWidget) #센터 레이아웃에 꼭 추가해줘야한다.
+        """
 
         self.initTimer()
         self.initUI()
@@ -23,33 +28,22 @@ class MainWindow(QMainWindow): #메인윈도우에선 layout 못쓴다. 자체�
         self.setWindowTitle('WOL for huliac')
         self.setWindowIcon(QIcon('huliacLogo.png'))
 
-
-        showComputerList = QAction(QIcon('poweron.png'), 'Power On', self)
+        showComputerList = QAction(QIcon('poweron.png'), '전원제어', self)
         showComputerList.setShortcut('Ctrl+O')
         showComputerList.setStatusTip('현재 컴퓨터 상태를 조작합니다.')
         showComputerList.triggered.connect(self.showComputerList)
         self.toolbar = self.addToolBar('showComputerList')
         self.toolbar.addAction(showComputerList)
 
-
-        changeComputerList = QAction(QIcon('edit.png'), 'changeComputerList', self)
+        changeComputerList = QAction(QIcon('edit.png'), '정보변경', self)
         changeComputerList.setShortcut('Ctrl+T')
         changeComputerList.setStatusTip('컴퓨터 정보를 변경합니다.')
-        changeComputerList.triggered.connect(self.showSetComputerWidget)
+        changeComputerList.triggered.connect(self.showComputerInfo)
         self.toolbar = self.addToolBar('changeComputerList')
         self.toolbar.addAction(changeComputerList)
 
-
-        #menubar = self.menuBar()
-        #menubar.setNativeMenuBar(False) #mac os에서 잘되라고 넣은 코드
-        #fileMenu = menubar.addMenu('&File') #앰퍼샌드&는 간편하게 단축기 설정해준거임 알프+F가됨
-        #fileMenu.addAction(exitAction)
-
-
         self.statusBar()
         self.statusBar().showMessage('Ready')
-
-
 
         """
         #self.setGeometry(800, 200, 500, 500) # x, y, width, height
@@ -82,9 +76,9 @@ class MainWindow(QMainWindow): #메인윈도우에선 layout 못쓴다. 자체�
         self.setCentralWidget(ComputerListWidget) #센터 레이아웃에 꼭 추가해줘야한다.
 
 
-    def showSetComputerWidget(self):
+    def showComputerInfo(self):
 
-        SettingComputer = SetComputer()
+        SettingComputer = ComputerInfoPrint()
         self.setCentralWidget(SettingComputer) #센터 레이아웃에 꼭 추가해줘야한다.
 
 
