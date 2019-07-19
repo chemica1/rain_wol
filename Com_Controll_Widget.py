@@ -1,9 +1,12 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
-
+import sys, threading, subprocess, platform
 
 
 class ComputerListPrint(QWidget):
+
+    def __del__(self):
+        print("1가 없어졌어요!")
 
 
     def __init__(self):
@@ -19,6 +22,7 @@ class ComputerListPrint(QWidget):
         self.computer_status = []
         self.computer_btn = []
 
+        self.initPingTest()
         self.initUI()
 
 
@@ -45,7 +49,7 @@ class ComputerListPrint(QWidget):
 
         for i in range(0, 10):
             self.computer_checkbox.insert(i, QCheckBox(self.list_of_name[i], self))
-            self.computer_status.insert(i, QLabel('ㅡㅡ'))
+            self.computer_status.insert(i, QLabel())
             self.computer_btn.insert(i, QPushButton('Power on', self))
 
         self.computer_layout = QGridLayout()
@@ -116,13 +120,21 @@ class ComputerListPrint(QWidget):
                 break
         file.close()
 
+    def initPingTest(self):  # 다중쓰레드 핑 테스트, 모든 컴퓨터들을 다 테스트해봄.
+        for i in range(0, 10):
+            ping_test_thread = threading.Thread(target=self.pingOk, args=(i,))  # args 튜플 끝 부분에 쉼표를 붙여줘야한다.
+            ping_test_thread.start()
 
-        """
-        def mousePressEvent(self, e): #mousePressEvent 이벤트 핸들러를 사용해서, 마우스를 클릭했을 때 closeApp 시그널이 방출되도록 했습니다.
 
-            self.c.closeApp.emit()
-        """
-
-class Communicate(QObject): #pyqtSignal()을 가지고 Communicate 클래스의 속성으로서 closeApp이라는 시그널을 하나 만들었습니다.
-
-    closeApp = pyqtSignal()
+    def pingOk(self, i):
+        try:
+            print(f'{i}' + self.list_of_IP[i])
+            output = subprocess.check_output(
+                "ping -{} 1 {}".format('n' if platform.system().lower() == "windows" else 'c', self.list_of_IP[i]),
+                shell=True)
+            self.computer_checkbox[i].toggle()
+            self.computer_status[i].setText('Power ON')
+        except Exception as e:
+            self.computer_status[i].setText('Power OFF')
+            return False
+        return True

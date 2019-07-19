@@ -4,6 +4,8 @@ from PyQt5.QtWidgets import *
 
 class ComputerInfoPrint(QWidget):
 
+    def __del__(self):
+        print("2가 없어졌어요!")
 
     def __init__(self):
         super().__init__()
@@ -100,7 +102,7 @@ class ComputerInfoPrint(QWidget):
             self.save_btn.setEnabled(True)
             self.input_mask_name.setInputMask(f'{index}. xxxxxxxxxxxx')
             self.input_mask_IP.setInputMask('xxx.xxx.xxx.xxx; ')
-            self.input_mask_MAC.setInputMask('>xx:xx:xx:xx:xx:xx; ')
+            self.input_mask_MAC.setInputMask('>xx.xx.xx.xx.xx.xx; ')
 
 
     def fileSetting(self, index):
