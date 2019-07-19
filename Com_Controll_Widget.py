@@ -18,43 +18,39 @@ class ComputerListPrint(QWidget):
         self.list_of_MAC = []
         self.file_to_list()
 
-        self.computer_checkbox = []  #원소가 없는 상태에서 = 연산자로 대입 불가능함. append나 insert 둘 중 하나로 해야됨.
+        self.computer_name = []  #원소가 없는 상태에서 = 연산자로 대입 불가능함. append나 insert 둘 중 하나로 해야됨.
         self.computer_status = []
         self.computer_btn = []
 
-        self.initPingTest()
         self.initUI()
+        self.initPingTest()
+        self.initTimer()
 
 
     def initUI(self):
 
-        self.whole_box = QGroupBox('체크된 컴퓨터 제어')
+        self.whole_box = QGroupBox('컴퓨터 제어')
 
-        self.on_button = QPushButton('Power on', self) #뒤에 self는 속할 부모클래스를 지정해줌
+        self.on_button = QPushButton('All Power On', self) #뒤에 self는 속할 부모클래스를 지정해줌
         self.on_button.setStyleSheet("background-color: gray; border-style: outset; border-width: 2px; border-radius: 10px; border-color: gray; font: bold 14px;  padding: 6px; color : white; ")
-        self.checkbox_button = QPushButton('전체 체크', self)
-        self.pingtest_button = QPushButton('핑 테스트', self)
 
         self.whole_layout = QHBoxLayout()
         self.whole_layout.addStretch(1)
-        self.whole_layout.addWidget(self.checkbox_button)
-        self.whole_layout.addStretch(1)
         self.whole_layout.addWidget(self.on_button)
-        self.whole_layout.addStretch(1)
-        self.whole_layout.addWidget(self.pingtest_button)
         self.whole_layout.addStretch(1)
         self.whole_box.setLayout(self.whole_layout)
 
         self.power_box = QGroupBox('개별 제어 & 모니터링')
 
         for i in range(0, 10):
-            self.computer_checkbox.insert(i, QCheckBox(self.list_of_name[i], self))
+            self.computer_name.insert(i, QLabel(self.list_of_name[i], self))
+            self.computer_name[i].setStyleSheet("bold 11px; ")
             self.computer_status.insert(i, QLabel())
             self.computer_btn.insert(i, QPushButton('Power on', self))
 
         self.computer_layout = QGridLayout()
         for i in range(0, 10):
-            self.computer_layout.addWidget(self.computer_checkbox[i], i, 0)
+            self.computer_layout.addWidget(self.computer_name[i], i, 0)
             self.computer_layout.addWidget(self.computer_status[i], i, 1)
             self.computer_layout.addWidget(self.computer_btn[i], i, 2)
         self.power_box.setLayout(self.computer_layout)
@@ -64,11 +60,14 @@ class ComputerListPrint(QWidget):
         self.layout.addWidget(self.power_box, 1, 0)
         self.setLayout(self.layout)
 
+        self.show()
+
 
     def onActivated(self, text):
 
         self.Label_Combo.setText(text)
         self.Label_Combo.adjustSize()
+
 
     def onChanged(self, text):
 
@@ -120,6 +119,7 @@ class ComputerListPrint(QWidget):
                 break
         file.close()
 
+
     def initPingTest(self):  # 다중쓰레드 핑 테스트, 모든 컴퓨터들을 다 테스트해봄.
         for i in range(0, 10):
             ping_test_thread = threading.Thread(target=self.pingOk, args=(i,))  # args 튜플 끝 부분에 쉼표를 붙여줘야한다.
@@ -132,9 +132,22 @@ class ComputerListPrint(QWidget):
             output = subprocess.check_output(
                 "ping -{} 1 {}".format('n' if platform.system().lower() == "windows" else 'c', self.list_of_IP[i]),
                 shell=True)
-            self.computer_checkbox[i].toggle()
-            self.computer_status[i].setText('Power ON')
+            self.computer_status[i].setText('작동 중')
+            self.computer_status[i].setStyleSheet("color : darkgreen; font: bold 13px;")
         except Exception as e:
-            self.computer_status[i].setText('Power OFF')
+            self.computer_status[i].setText('연결 끊김')
+            self.computer_status[i].setStyleSheet("color : gray ")
             return False
         return True
+
+
+    def initTimer(self):
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.initPingTest)
+        self.timer.start(60000)
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = ComputerListPrint()
+    sys.exit(app.exec_())

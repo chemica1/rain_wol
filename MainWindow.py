@@ -21,7 +21,7 @@ class MainWindow(QMainWindow): #메인윈도우에선 layout 못쓴다. 자체�
         self.initTimer()
         self.initPowerOn()
         self.initUI()
-        QTimer.singleShot(30000, self.showComputerList)
+        QTimer.singleShot(3000, self.showComputerList)
 
 
     def initUI(self):
@@ -45,9 +45,9 @@ class MainWindow(QMainWindow): #메인윈도우에선 layout 못쓴다. 자체�
         list_toolbar.setEnabled(False)
 
         self.showLoadingMovie()
-        QTimer.singleShot(15000, self.showLoadingMovie2)
-        QTimer.singleShot(30000, lambda: info_toolbar.setEnabled(True))
-        QTimer.singleShot(30000, lambda: list_toolbar.setEnabled(True))
+        QTimer.singleShot(1500, self.showLoadingMovie2)
+        QTimer.singleShot(3000, lambda: info_toolbar.setEnabled(True))
+        QTimer.singleShot(3000, lambda: list_toolbar.setEnabled(True))
 
         self.statusBar()
         self.statusBar().showMessage(self.date.toString(Qt.DefaultLocaleLongDate) + ' '+self.time.toString()) #시간표시
