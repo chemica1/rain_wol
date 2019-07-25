@@ -36,7 +36,7 @@ class ComputerListPrint(QWidget):
         self.whole_box = QGroupBox('컴퓨터 제어')
 
         self.all_button = QPushButton('All Power On', self) #뒤에 self는 속할 부모클래스를 지정해줌
-        self.all_button.setStyleSheet("background-color: gray; border-style: outset; border-width: 2px; border-radius: 10px; border-color: gray; font: bold 14px;  padding: 6px; color : white; ")
+        self.all_button.setStyleSheet("background-color: gray; font: bold 14px;  padding: 6px; color : white; ") # 보더 스타일시트를 변경 할경우 누르는 이펙트가 사라지게 된다.
         self.all_button.clicked.connect(self.All_btn_clicked)
 
         self.whole_layout = QHBoxLayout()
@@ -70,6 +70,7 @@ class ComputerListPrint(QWidget):
     def All_btn_clicked(self):
         for i in range (0,10):
             self.list_of_packetClass[i].send_packet()
+
 
     def onActivated(self, text):
 
