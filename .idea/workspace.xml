@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dd063d9-a262-48cf-868f-e0e81d8f2b51" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/magic_packet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Com_Controll_Widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/Com_Controll_Widget.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Com_Info_Widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/Com_Info_Widget.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Computer_IP.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Computer_IP.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Computer_MAC.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Computer_MAC.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Computer_name.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Computer_name.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,12 +17,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Com_Controll_Widget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="307">
+              <caret line="163" column="32" selection-start-line="163" selection-start-column="32" selection-end-line="163" selection-end-column="32" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -29,11 +30,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Com_Info_Widget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
+            <state relative-caret-position="304">
+              <caret line="112" column="98" selection-start-line="112" selection-start-column="98" selection-end-line="112" selection-end-column="98" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/magic_packet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -41,8 +54,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MainWindow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="-57">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/Computer_IP.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -77,6 +93,11 @@
       <find>QCheckBox</find>
       <find>computer_checkbox</find>
       <find>input_mask_ch</find>
+      <find>input_mask_changed</find>
+      <find>input_mask_name</find>
+      <find>save_newInfo</find>
+      <find>label_com</find>
+      <find>list_of_packet</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -106,8 +127,9 @@
         <option value="$PROJECT_DIR$/Loading_Widget.py" />
         <option value="$PROJECT_DIR$/TimeDialog.py" />
         <option value="$PROJECT_DIR$/MainWindow.py" />
-        <option value="$PROJECT_DIR$/Com_Controll_Widget.py" />
         <option value="$PROJECT_DIR$/Com_Info_Widget.py" />
+        <option value="$PROJECT_DIR$/magic_packet.py" />
+        <option value="$PROJECT_DIR$/Com_Controll_Widget.py" />
       </list>
     </option>
   </component>
@@ -326,7 +348,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Com_Info_Widget.py</url>
-          <line>172</line>
+          <line>112</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
@@ -381,9 +403,7 @@
     <entry file="file://$PROJECT_DIR$/exit.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/loading_Widget.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/loading_Widget.py" />
     <entry file="file://$PROJECT_DIR$/loading.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -414,16 +434,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TimeDialog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TimeDialog.py" />
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -436,32 +447,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MainWindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="-57">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Computer_IP.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Com_Controll_Widget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Com_Info_Widget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
+        <state relative-caret-position="304">
+          <caret line="112" column="98" selection-start-line="112" selection-start-column="98" selection-end-line="112" selection-end-column="98" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/magic_packet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Com_Controll_Widget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="163" column="32" selection-start-line="163" selection-start-column="32" selection-end-line="163" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

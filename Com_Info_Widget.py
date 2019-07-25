@@ -14,6 +14,7 @@ class ComputerInfoPrint(QWidget):
         self.list_of_IP = []
         self.list_of_MAC = []
         self.file_to_list()
+        self.input_mask_index = 0
 
         self.initUI()
         self.init_INFO()
@@ -35,8 +36,6 @@ class ComputerInfoPrint(QWidget):
         self.save_btn = QPushButton('저장', self)
         self.save_btn.setEnabled(False)
 
-
-
         self.input_mask_name.setPlaceholderText('컴퓨터 이름')
         self.input_mask_IP.setPlaceholderText('IP 주소')
         self.input_mask_MAC.setPlaceholderText('MAC 주소')
@@ -50,7 +49,6 @@ class ComputerInfoPrint(QWidget):
         self.input_mask_layout.addWidget(self.input_mask_MAC, 1, 2)
 
         self.input_mask_group.setLayout(self.input_mask_layout)
-
 
         # IP MAC 정보
         self.txt_group = QGroupBox('현재 IP, MAC 정보')
@@ -102,7 +100,51 @@ class ComputerInfoPrint(QWidget):
             self.save_btn.setEnabled(True)
             self.input_mask_name.setInputMask(f'{index}. xxxxxxxxxxxx; ')
             self.input_mask_IP.setInputMask('xxx.xxx.xxx.xxx; ')
-            self.input_mask_MAC.setInputMask('>xx.xx.xx.xx.xx.xx; ')
+            self.input_mask_MAC.setInputMask('>xx.xx.xx.xx.xx.xx;0 ')
+            self.input_mask_index = index
+
+
+    def btn_clicked(self):
+        name = self.input_mask_name.text() #착각하면 안된다. 여기서 나오는 반환값은 String이 아니라 QString이다...
+        IP = self.input_mask_IP.text()
+        MAC = str(self.input_mask_MAC.text())
+        temp = len(MAC)
+        IP.replace(" ", "")
+        #temp = int(name[0])  #Qstring을 int로 바꾼다. #7/19 여기 수정해야됨. 10이 1로되는현상. #7/25 수정함 전역변수를 사용해서
+        index = self.input_mask_index - 1
+
+        if temp > 6 :
+            self.save_newInfo('MAC', index, MAC)
+        else:
+            self.save_newInfo('MAC', index, '00.00.00.00.00.00')
+        self.save_newInfo('name', index, name)
+        self.save_newInfo('IP', index, IP)
+
+        self.init_INFO()
+
+
+    def save_newInfo(self, file, index, newInfo):
+
+        if file == 'MAC':
+            self.list_of_MAC[index] = newInfo
+            with open(f'Computer_{file}.txt', 'w', encoding='UTF8') as fp:
+                for i in self.list_of_MAC:
+                    data = i
+                    fp.write(data+'\n')
+
+        if file == 'name':
+            self.list_of_name[index] = newInfo
+            with open(f'Computer_{file}.txt', 'w', encoding='UTF8') as fp:
+                for i in self.list_of_name:
+                    data = i
+                    fp.write(data + '\n')
+
+        if file == 'IP':
+            self.list_of_IP[index] = newInfo
+            with open(f'Computer_{file}.txt', 'w', encoding='UTF8') as fp:
+                for i in self.list_of_IP:
+                    data = i
+                    fp.write(data + '\n')
 
 
     def fileSetting(self, index):
@@ -163,45 +205,6 @@ class ComputerInfoPrint(QWidget):
             else:
                 break
         file.close()
-
-
-    def btn_clicked(self):
-        name = self.input_mask_name.text() #착각하면 안된다. 여기서 나오는 반환값은 String이 아니라 QString이다...
-        IP = self.input_mask_IP.text()
-        MAC = self.input_mask_MAC.text()
-        IP.replace(" ", "")
-        temp = int(name[0])  #Qstring을 int로 바꾼다. #7/19 여기 수정해야됨. 10이 1로되는현상
-        index = temp - 1
-
-        self.save_newInfo('name', index, name)
-        self.save_newInfo('MAC', index, MAC)
-        self.save_newInfo('IP', index, IP)
-
-        self.init_INFO()
-
-
-    def save_newInfo(self, file, index, newInfo):
-
-        if file == 'MAC':
-            self.list_of_MAC[index] = newInfo
-            with open(f'Computer_{file}.txt', 'w', encoding='UTF8') as fp:
-                for i in self.list_of_MAC:
-                    data = i
-                    fp.write(data+'\n')
-
-        if file == 'name':
-            self.list_of_name[index] = newInfo
-            with open(f'Computer_{file}.txt', 'w', encoding='UTF8') as fp:
-                for i in self.list_of_name:
-                    data = i
-                    fp.write(data + '\n')
-
-        if file == 'IP':
-            self.list_of_IP[index] = newInfo
-            with open(f'Computer_{file}.txt', 'w', encoding='UTF8') as fp:
-                for i in self.list_of_IP:
-                    data = i
-                    fp.write(data + '\n')
 
 
 if __name__ == '__main__':
