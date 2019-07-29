@@ -1,4 +1,4 @@
-import sys
+import sys, subprocess, shlex
 from PyQt5.QtWidgets import (QApplication, QWidget, QGroupBox, QRadioButton, QCheckBox, QPushButton, QMenu, QGridLayout, QVBoxLayout)
 
 
@@ -22,6 +22,7 @@ class MyApp(QWidget):
         self.setWindowTitle('Box Layout')
         self.setGeometry(300, 300, 480, 320)
         self.show()
+
 
     def createFirstExclusiveGroup(self):
         groupbox = QGroupBox('Exclusive Radio Buttons')
@@ -109,9 +110,46 @@ class MyApp(QWidget):
 
         return groupbox
 
+    # 문자열 명령어 실행
+    def subprocess_open(command):
+        popen = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        (stdoutdata, stderrdata) = popen.communicate()
+        return stdoutdata, stderrdata
+
+    # 배치 파일 등 실행
+    def subprocess_open_when_shell_false(command):
+        popen = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        (stdoutdata, stderrdata) = popen.communicate()
+        return stdoutdata, stderrdata
+
+    # 문자열 명령어 실행
+    # shell 변수를 false 로 줄경우(default가 false) 명령어를 shelx.split() 함수로 프로세스가 인식 가능하게 잘라 주어야 함
+    def subprocess_open_when_shell_false_with_shelx(command):
+        popen = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        (stdoutdata, stderrdata) = popen.communicate()
+        return stdoutdata, stderrdata
+
+    # 커맨드 리스트 처리
+    # 커맨드 리스트를 이전 처리의 결과(stdout)를 다음 처리의 입력(stdin)으로 입력하여 순차적으로 처리
+    def subprocess_pipe(cmd_list):
+        prev_stdin = None
+        last_p = None
+
+        for str_cmd in cmd_list:
+            cmd = str_cmd.split()
+            last_p = subprocess.Popen(cmd, stdin=prev_stdin, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            prev_stdin = last_p.stdout
+
+        (stdoutdata, stderrdata) = last_p.communicate()
+        return stdoutdata, stderrdata
+
+
 
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)
+
     ex = MyApp()
+    proc = subprocess.Popen(['cmd', '/c', 'C:\\Windows\\System32\\psexec', '\\\\192.168.200.3', '-u', 'remoteoff', '-p', '7150', 'shutdown', '-f', '-r', '-t', '60'], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    print(proc.stdout.read())
     sys.exit(app.exec_())

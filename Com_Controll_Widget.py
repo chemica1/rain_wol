@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
-from magic_packet import send_packet_class
+from Magic_Packet import send_packet_class
+from Remote_Off import Remote_off_class
 import sys, threading, subprocess, platform
 
 
@@ -19,11 +20,13 @@ class ComputerListPrint(QWidget):
         self.list_of_IP = []
         self.list_of_MAC = []
         self.list_of_packetClass = []
+        self.list_of_psexecClass = []
         self.file_to_list()
 
         self.computer_name = []  #원소가 없는 상태에서 = 연산자로 대입 불가능함. append나 insert 둘 중 하나로 해야됨.
         self.computer_status = []
-        self.computer_btn = []
+        self.computer_on_btn = []
+        self.computer_off_btn = []
 
         self.initUI()
         QTimer.singleShot(1000, self.initPingTest)
@@ -32,7 +35,6 @@ class ComputerListPrint(QWidget):
 
 
     def initUI(self):
-
         self.whole_box = QGroupBox('컴퓨터 제어')
 
         self.all_button = QPushButton('All Power On', self) #뒤에 self는 속할 부모클래스를 지정해줌
@@ -51,14 +53,18 @@ class ComputerListPrint(QWidget):
             self.computer_name.insert(i, QLabel(self.list_of_name[i], self))
             self.computer_name[i].setStyleSheet("bold 11px; ")
             self.computer_status.insert(i, QLabel())
-            self.computer_btn.insert(i, QPushButton('Power on', self))
-
+            self.computer_on_btn.insert(i, QPushButton('Power on', self))
+            self.computer_off_btn.insert(i, QPushButton('Power off', self))
+            self.computer_off_btn[i].setEnabled(False)
 
         self.computer_layout = QGridLayout()
+
         for i in range(0, 10):
             self.computer_layout.addWidget(self.computer_name[i], i, 0)
             self.computer_layout.addWidget(self.computer_status[i], i, 1)
-            self.computer_layout.addWidget(self.computer_btn[i], i, 2)
+            self.computer_layout.addWidget(self.computer_on_btn[i], i, 2)
+            self.computer_layout.addWidget(self.computer_off_btn[i], i, 3)
+
         self.power_box.setLayout(self.computer_layout)
 
         self.layout = QGridLayout()
@@ -68,6 +74,7 @@ class ComputerListPrint(QWidget):
 
 
     def All_btn_clicked(self):
+
         for i in range (0,10):
             self.list_of_packetClass[i].send_packet()
 
@@ -128,25 +135,30 @@ class ComputerListPrint(QWidget):
                 break
         file.close()
 
-
     def initPingTest(self):  # 다중쓰레드 핑 테스트, 모든 컴퓨터들을 다 테스트해봄.
         for i in range(0, 10):
             ping_test_thread = threading.Thread(target=self.pingOk, args=(i,))  # args 튜플 끝 부분에 쉼표를 붙여줘야한다.
             ping_test_thread.setDaemon(True) # 데몬쓰레드는 메인 프로그램이 종료될때 자동으로 같이 종료한다.
             ping_test_thread.start()
 
-
     def pingOk(self, i):
         try:
-            print(f'{i}' + self.list_of_IP[i])
             output = subprocess.check_output(
                 "ping -{} 1 {}".format('n' if platform.system().lower() == "windows" else 'c', self.list_of_IP[i]),
                 shell=True)
             self.computer_status[i].setText('작동 중')
             self.computer_status[i].setStyleSheet("color : darkgreen; font: bold 13px;")
+            self.computer_off_btn[i].setEnabled(True)
+            print(f'{i}' + self.list_of_IP[i] +'핑테스트 성공')
         except Exception as e:
-            self.computer_status[i].setText('연결 끊김')
-            self.computer_status[i].setStyleSheet("color : gray ")
+            try:
+                self.computer_status[i].setText('연결 끊김')
+                self.computer_status[i].setStyleSheet("color : gray ")
+                self.computer_off_btn[i].setEnabled(False)
+                print(f'{i}' + self.list_of_IP[i] + '핑테스트 실패')
+
+            except RuntimeError:
+                print("표시할 곳 이미 사라짐 ㅎ")
             return False
         return True
 
@@ -154,14 +166,19 @@ class ComputerListPrint(QWidget):
     def initTimer(self):
         self.timer = QTimer()
         self.timer.timeout.connect(self.initPingTest)
-        self.timer.start(60000)
+        self.timer.start(20000)
 
 
     def initBtn(self):
 
         for i in range (0,10):
+            self.list_of_psexecClass.insert(i, Remote_off_class(self.list_of_IP[i]))
+            self.computer_off_btn[i].clicked.connect(self.list_of_psexecClass[i].power_off)
+            print(f'{self.list_of_psexecClass[i].IP} ㅡㅡㅡㅡ')
+
+        for i in range (0,10):
             self.list_of_packetClass.insert(i, send_packet_class(self.list_of_MAC[i]))
-            self.computer_btn[i].clicked.connect(self.list_of_packetClass[i].send_packet)
+            self.computer_on_btn[i].clicked.connect(self.list_of_packetClass[i].send_packet)
             print('hihi' + self.list_of_packetClass[i].MAC)
 
 

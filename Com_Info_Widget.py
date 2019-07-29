@@ -100,7 +100,7 @@ class ComputerInfoPrint(QWidget):
             self.save_btn.setEnabled(True)
             self.input_mask_name.setInputMask(f'{index}. xxxxxxxxxxxx; ')
             self.input_mask_IP.setInputMask('xxx.xxx.xxx.xxx; ')
-            self.input_mask_MAC.setInputMask('>xx.xx.xx.xx.xx.xx;0 ')
+            self.input_mask_MAC.setInputMask('>xx.xx.xx.xx.xx.xx;_ ')
             self.input_mask_index = index
 
 
@@ -113,7 +113,7 @@ class ComputerInfoPrint(QWidget):
         #temp = int(name[0])  #Qstring을 int로 바꾼다. #7/19 여기 수정해야됨. 10이 1로되는현상. #7/25 수정함 전역변수를 사용해서
         index = self.input_mask_index - 1
 
-        if temp > 6 :
+        if temp > 8 :
             self.save_newInfo('MAC', index, MAC)
         else:
             self.save_newInfo('MAC', index, '00.00.00.00.00.00')
