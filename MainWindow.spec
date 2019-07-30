@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['MainWindow.py'],
-             pathex=['D:\\rain_wol'],
+             pathex=['C:\\Users\\dh\\Desktop\\rain_wol'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -26,7 +26,7 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=False )
+          console=True )
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,

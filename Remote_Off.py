@@ -15,5 +15,10 @@ class Remote_off_class:
         print(f'byebye {self.IP}')
         proc = subprocess.run(['cmd', '/c', f'{self.dir_path}\\psexec', f'\\\\{self.IP}', '-u', 'remoteoff', '-p', '7150', 'shutdown', '-f', '-s', '-t', '10'])
 
+    def power_off_etc(self, IP):
+        print(f'byebye {IP}')
+        proc = subprocess.run(['cmd', '/c', f'{self.dir_path}\\psexec', f'\\\\{IP}', '-u', 'remoteoff', '-p', '7150', 'shutdown', '-f', '-s', '-t', '10'])
+
+
 if __name__ == '__main__':
         proc = subprocess.run(['cmd', '/c', f'{os.getcwd()}\\psexec', '\\\\192.168.200.3', '-u', 'remoteoff', '-p', '7150', 'shutdown', '-f', '-r', '-t', '100'])

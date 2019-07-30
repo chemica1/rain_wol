@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from Magic_Packet import send_packet_class
 from Remote_Off import Remote_off_class
-import sys, threading, subprocess, platform
+import sys, threading, subprocess, platform,os
 
 
 class ComputerListPrint(QWidget):
@@ -16,6 +16,7 @@ class ComputerListPrint(QWidget):
 
         super().__init__()
 
+        self.dir_path = os.getcwd()
         self.list_of_name = []
         self.list_of_IP = []
         self.list_of_MAC = []
@@ -94,7 +95,7 @@ class ComputerListPrint(QWidget):
     def file_to_list(self):
 
         #컴퓨터 리스트
-        file = open('Computer_name.txt', 'r', encoding='UTF8')
+        file = open(f'{self.dir_path}\\Computer_name.txt', 'r', encoding='UTF8')
         while (1):
             line = file.readline()
             try:
@@ -108,7 +109,7 @@ class ComputerListPrint(QWidget):
         file.close()
 
         #IP 리스트
-        file = open('Computer_IP.txt', 'r', encoding='UTF8')
+        file = open(f'{self.dir_path}\\Computer_IP.txt', 'r', encoding='UTF8')
         while (1):
             line = file.readline()
             try:
@@ -122,7 +123,7 @@ class ComputerListPrint(QWidget):
         file.close()
 
         #MAC 리스트
-        file = open('Computer_MAC.txt', 'r', encoding='UTF8')
+        file = open(f'{self.dir_path}\\Computer_MAC.txt', 'r', encoding='UTF8')
         while (1):
             line = file.readline()
             try:
@@ -135,13 +136,17 @@ class ComputerListPrint(QWidget):
                 break
         file.close()
 
+
     def initPingTest(self):  # 다중쓰레드 핑 테스트, 모든 컴퓨터들을 다 테스트해봄.
+
         for i in range(0, 10):
             ping_test_thread = threading.Thread(target=self.pingOk, args=(i,))  # args 튜플 끝 부분에 쉼표를 붙여줘야한다.
             ping_test_thread.setDaemon(True) # 데몬쓰레드는 메인 프로그램이 종료될때 자동으로 같이 종료한다.
             ping_test_thread.start()
 
+
     def pingOk(self, i):
+
         try:
             output = subprocess.check_output(
                 "ping -{} 1 {}".format('n' if platform.system().lower() == "windows" else 'c', self.list_of_IP[i]),
@@ -164,6 +169,7 @@ class ComputerListPrint(QWidget):
 
 
     def initTimer(self):
+
         self.timer = QTimer()
         self.timer.timeout.connect(self.initPingTest)
         self.timer.start(20000)

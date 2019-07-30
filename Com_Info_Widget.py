@@ -1,4 +1,4 @@
-import sys
+import sys, os
 from PyQt5.QtWidgets import *
 
 
@@ -9,7 +9,7 @@ class ComputerInfoPrint(QWidget):
 
     def __init__(self):
         super().__init__()
-
+        self.dir_path = os.getcwd()
         self.list_of_name = []
         self.list_of_IP = []
         self.list_of_MAC = []
@@ -84,13 +84,13 @@ class ComputerInfoPrint(QWidget):
 
     def init_INFO(self):
 
-        with open('Computer_name.txt', 'r', encoding='UTF8') as fp_name:
+        with open(f'{self.dir_path}\\Computer_name.txt', 'r', encoding='UTF8') as fp_name:
             self.name_txt.setPlainText(fp_name.read())
 
-        with open('Computer_IP.txt', 'r', encoding='UTF8') as fp_IP:
+        with open(f'{self.dir_path}\\Computer_IP.txt', 'r', encoding='UTF8') as fp_IP:
             self.IP_txt.setPlainText(fp_IP.read())
 
-        with open('Computer_MAC.txt', 'r', encoding='UTF8') as fp_MAC:
+        with open(f'{self.dir_path}\\Computer_MAC.txt', 'r', encoding='UTF8') as fp_MAC:
             self.MAC_txt.setPlainText(fp_MAC.read())
 
 
@@ -127,21 +127,21 @@ class ComputerInfoPrint(QWidget):
 
         if file == 'MAC':
             self.list_of_MAC[index] = newInfo
-            with open(f'Computer_{file}.txt', 'w', encoding='UTF8') as fp:
+            with open(f'{self.dir_path}\\Computer_{file}.txt', 'w', encoding='UTF8') as fp:
                 for i in self.list_of_MAC:
                     data = i
                     fp.write(data+'\n')
 
         if file == 'name':
             self.list_of_name[index] = newInfo
-            with open(f'Computer_{file}.txt', 'w', encoding='UTF8') as fp:
+            with open(f'{self.dir_path}\\Computer_{file}.txt', 'w', encoding='UTF8') as fp:
                 for i in self.list_of_name:
                     data = i
                     fp.write(data + '\n')
 
         if file == 'IP':
             self.list_of_IP[index] = newInfo
-            with open(f'Computer_{file}.txt', 'w', encoding='UTF8') as fp:
+            with open(f'{self.dir_path}\\Computer_{file}.txt', 'w', encoding='UTF8') as fp:
                 for i in self.list_of_IP:
                     data = i
                     fp.write(data + '\n')
@@ -149,12 +149,12 @@ class ComputerInfoPrint(QWidget):
 
     def fileSetting(self, index):
 
-        f = open('Computer_name.txt', 'r', encoding='UTF8').read()
+        f = open(f'{self.dir_path}\\Computer_name.txt', 'r', encoding='UTF8').read()
         self.name_txt.setPlainText(f)
         self.IP_txt.setPlainText(f)
         self.MAC_txt.setPlainText(f)
 
-        with open('Computer_name.txt', 'r', encoding='UTF8') as fp:
+        with open(f'{self.dir_path}\\Computer_name.txt', 'r', encoding='UTF8') as fp:
             for i, line in enumerate(fp):
                 if i == (index-2):
                     self.input_mask_name.setText(fp.readline())
@@ -165,7 +165,7 @@ class ComputerInfoPrint(QWidget):
     def file_to_list(self):
 
         #컴퓨터 리스트
-        file = open('Computer_name.txt', 'r', encoding='UTF8')
+        file = open(f'{self.dir_path}\\Computer_name.txt', 'r', encoding='UTF8')
         while (1):
             line = file.readline()
             try:
@@ -179,7 +179,7 @@ class ComputerInfoPrint(QWidget):
         file.close()
 
         #IP 리스트
-        file = open('Computer_IP.txt', 'r', encoding='UTF8')
+        file = open(f'{self.dir_path}\\Computer_IP.txt', 'r', encoding='UTF8')
         while (1):
             line = file.readline()
             try:
@@ -193,7 +193,7 @@ class ComputerInfoPrint(QWidget):
         file.close()
 
         #MAC 리스트
-        file = open('Computer_MAC.txt', 'r', encoding='UTF8')
+        file = open(f'{self.dir_path}\\Computer_MAC.txt', 'r', encoding='UTF8')
         while (1):
             line = file.readline()
             try:
