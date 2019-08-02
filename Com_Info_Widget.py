@@ -4,9 +4,6 @@ from PyQt5.QtWidgets import *
 
 class ComputerInfoPrint(QWidget):
 
-    def __del__(self):
-        print("2가 없어졌어요!")
-
     def __init__(self):
         super().__init__()
         self.dir_path = os.getcwd()

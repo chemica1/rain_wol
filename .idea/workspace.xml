@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dd063d9-a262-48cf-868f-e0e81d8f2b51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/wakeonlan.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Com_Controll_Widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/Com_Controll_Widget.py" afterDir="false" />
@@ -10,8 +9,10 @@
       <change beforePath="$PROJECT_DIR$/Com_Timer_Widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/Com_Timer_Widget.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Computer_IP.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Computer_IP.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Computer_name.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Computer_name.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainWindow.spec" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Loading_Widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/Loading_Widget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Wol_for_huliac.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainWindow.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QGroupBox.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Remote_Off.py" beforeDir="false" afterPath="$PROJECT_DIR$/Remote_Off.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/MainWindow/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/MainWindow/Analysis-00.toc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/MainWindow/COLLECT-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/MainWindow/COLLECT-00.toc" afterDir="false" />
@@ -24,13 +25,83 @@
       <change beforePath="$PROJECT_DIR$/build/MainWindow/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/MainWindow/base_library.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/MainWindow/warn-MainWindow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/MainWindow/warn-MainWindow.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/MainWindow/xref-MainWindow.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/MainWindow/xref-MainWindow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/MainWindow/MainWindow.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/MainWindow/MainWindow.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/MainWindow/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/dist/MainWindow/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/MSVCP140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/MainWindow.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/MainWindow.exe.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/bin/d3dcompiler_47.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/bin/libEGL.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/bin/libGLESv2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/bin/opengl32sw.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/iconengines/qsvgicon.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/imageformats/qgif.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/imageformats/qicns.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/imageformats/qico.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/imageformats/qjpeg.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/imageformats/qsvg.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/imageformats/qtga.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/imageformats/qtiff.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/imageformats/qwbmp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/imageformats/qwebp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/platforms/qminimal.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/platforms/qoffscreen.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/platforms/qwebgl.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/platforms/qwindows.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/platformthemes/qflatpak.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/Qt/plugins/styles/qwindowsvistastyle.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/QtCore.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/QtGui.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/QtWidgets.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/sip.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_ar.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_bg.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_ca.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_cs.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_da.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_de.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_en.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_es.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_fi.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_fr.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_gd.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_he.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_hu.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_it.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_ja.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_ko.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_lv.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_pl.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_ru.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_sk.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/PyQt5/translations/qtbase_uk.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/Qt5Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/Qt5DBus.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/Qt5Gui.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/Qt5Network.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/Qt5Qml.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/Qt5Quick.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/Qt5Svg.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/Qt5WebSockets.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/Qt5Widgets.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/VCRUNTIME140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/_bz2.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/_hashlib.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/_lzma.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/_socket.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/_ssl.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/base_library.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/MainWindow/edit.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/MainWindow/exit (1).png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/MainWindow/exit.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/MainWindow/huliac.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/MainWindow/huliacLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/libGLESv2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/libcrypto-1_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/libssl-1_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/pyexpat.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/python3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/python37.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/select.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/MainWindow/unicodedata.pyd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wakeonlan-1.1.6.dist-info/DESCRIPTION.rst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wakeonlan-1.1.6.dist-info/INSTALLER" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wakeonlan-1.1.6.dist-info/LICENSE.txt" beforeDir="false" />
@@ -51,32 +122,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Com_Controll_Widget.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Com_Info_Widget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+            <state relative-caret-position="513">
+              <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Computer_time.txt">
+        <entry file="file://$PROJECT_DIR$/Computer_start_time.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -90,43 +149,60 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MainWindow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Remote_Off.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Computer_MAC.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wakeonlan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+            <state relative-caret-position="399">
+              <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setup.py">
+        <entry file="file://$PROJECT_DIR$/Wol_for_huliac.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+            <state relative-caret-position="-1019">
+              <caret line="83" column="64" lean-forward="true" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Com_Controll_Widget.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="421">
+              <caret line="190" column="25" lean-forward="true" selection-start-line="190" selection-start-column="25" selection-end-line="190" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Com_Timer_Widget.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="179" lean-forward="true" selection-start-line="179" selection-end-line="179" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Loading_Widget.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="35" column="24" lean-forward="true" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -139,15 +215,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MainWindow.spec">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -185,6 +252,13 @@
       <find>computer_on_btn</find>
       <find>date</find>
       <find>time</find>
+      <find>input_mask_cb</find>
+      <find>input_mask_time</find>
+      <find>turn_off</find>
+      <find>input_mask_index</find>
+      <find>WhatTimeIsIt</find>
+      <find>initWindowWhere</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -195,7 +269,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/TestWidgets.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/WOL_.py" />
         <option value="$PROJECT_DIR$/pingTest.py" />
         <option value="$PROJECT_DIR$/venv/wol.py" />
@@ -210,7 +283,6 @@
         <option value="$PROJECT_DIR$/Computer_MAC.txt" />
         <option value="$PROJECT_DIR$/venv/loading_Widget.py" />
         <option value="$PROJECT_DIR$/loading_Widget.py" />
-        <option value="$PROJECT_DIR$/Loading_Widget.py" />
         <option value="$PROJECT_DIR$/TimeDialog.py" />
         <option value="$PROJECT_DIR$/magic_packet.py" />
         <option value="$PROJECT_DIR$/QGroupBox.py" />
@@ -218,19 +290,22 @@
         <option value="$PROJECT_DIR$/Remote_off.py" />
         <option value="$PROJECT_DIR$/Magic_packet.py" />
         <option value="$PROJECT_DIR$/venv/Com_Timer_Widget.py" />
-        <option value="$PROJECT_DIR$/Com_Timer_Widget.py" />
-        <option value="$PROJECT_DIR$/Remote_Off.py" />
         <option value="$PROJECT_DIR$/wakeonlan.py" />
         <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/Remote_Off.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/MainWindow.py" />
-        <option value="$PROJECT_DIR$/Com_Info_Widget.py" />
+        <option value="$PROJECT_DIR$/Wol_for_huliac.py" />
         <option value="$PROJECT_DIR$/Com_Controll_Widget.py" />
+        <option value="$PROJECT_DIR$/Loading_Widget.py" />
+        <option value="$PROJECT_DIR$/Com_Info_Widget.py" />
+        <option value="$PROJECT_DIR$/Com_Timer_Widget.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2721" />
-    <option name="y" value="-20" />
+    <option name="x" value="589" />
+    <option name="y" value="-24" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -248,11 +323,6 @@
             <path>
               <item name="rain_wol" type="b2602c69:ProjectViewProjectNode" />
               <item name="rain_wol" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rain_wol" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rain_wol" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rain_wol" type="b2602c69:ProjectViewProjectNode" />
@@ -283,7 +353,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.MainWindow">
-    <configuration name="Com_Timer_Widget" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Com_Timer_Widget (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="rain_wol" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -304,6 +374,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Com_Timer_Widget" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="rain_wol" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\dh\Desktop\rain_wol\temp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="MainWindow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="rain_wol" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -316,49 +407,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MainWindow.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="QGroupBox" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="rain_wol" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/QGroupBox.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="RemoteOff" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="rain_wol" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\rain_wol\Remote_Off.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\dh\Desktop\rain_wol\Wol_for_huliac.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -388,13 +437,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="rain_wol" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\dh\Desktop\rain_wol\Com_Timer_Widget.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.MainWindow" />
+        <item itemvalue="Python.Com_Timer_Widget (1)" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.Com_Timer_Widget" />
         <item itemvalue="Python.Remote_Off" />
-        <item itemvalue="Python.RemoteOff" />
-        <item itemvalue="Python.QGroupBox" />
       </list>
     </recent_temporary>
   </component>
@@ -421,9 +491,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12802951" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.091675445" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -449,7 +519,6 @@
     <entry file="file://$PROJECT_DIR$/pingTest.py" />
     <entry file="file://$PROJECT_DIR$/venv/loading_Widget.py" />
     <entry file="file://$PROJECT_DIR$/TimeDialog.py" />
-    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/pen.png" />
     <entry file="file://$PROJECT_DIR$/exit (1).png" />
     <entry file="file://$PROJECT_DIR$/edit.png">
@@ -464,9 +533,6 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/Com_Timer_Widget.py" />
-    <entry file="file://$PROJECT_DIR$/time.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/loading.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -476,84 +542,12 @@
     <entry file="file://$PROJECT_DIR$/huliac.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/QGroupBox.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Loading_Widget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Computer_MAC.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/QGroupBox.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/wakeonlan.py" />
-    <entry file="file://$PROJECT_DIR$/Com_Timer_Widget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Magic_Packet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wakeonlan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Computer_time.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Computer_name.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Computer_IP.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainWindow.spec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -567,32 +561,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MainWindow.py">
+    <entry file="file://$PROJECT_DIR$/setup.py" />
+    <entry file="file://$PROJECT_DIR$/time.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp.py" />
+    <entry file="file://$PROJECT_DIR$/Computer_time.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Com_Info_Widget.py">
+    <entry file="file://$PROJECT_DIR$/Computer_start_time.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Computer_name.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Computer_MAC.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wakeonlan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Computer_IP.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainWindow.spec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wol_for_huliac.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1019">
+          <caret line="83" column="64" lean-forward="true" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Com_Controll_Widget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="421">
+          <caret line="190" column="25" lean-forward="true" selection-start-line="190" selection-start-column="25" selection-end-line="190" selection-end-column="25" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Loading_Widget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="35" column="24" lean-forward="true" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Com_Info_Widget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Com_Timer_Widget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="179" lean-forward="true" selection-start-line="179" selection-end-line="179" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

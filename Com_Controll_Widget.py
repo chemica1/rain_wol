@@ -8,7 +8,6 @@ import sys, threading, subprocess, platform,os
 class ComputerListPrint(QWidget):
 
     def __del__(self):
-        print("1가 없어졌어요!")
         self.timer.stop()
 
 
@@ -163,7 +162,7 @@ class ComputerListPrint(QWidget):
                 print(f'{i}' + self.list_of_IP[i] + '핑테스트 실패')
 
             except RuntimeError:
-                print("표시할 곳 이미 사라짐 ㅎ")
+                print("객체 삭제")
             return False
         return True
 
@@ -180,12 +179,10 @@ class ComputerListPrint(QWidget):
         for i in range (0,10):
             self.list_of_psexecClass.insert(i, Remote_off_class(self.list_of_IP[i]))
             self.computer_off_btn[i].clicked.connect(self.list_of_psexecClass[i].power_off)
-            print(f'{self.list_of_psexecClass[i].IP} ㅡㅡㅡㅡ')
 
         for i in range (0,10):
             self.list_of_packetClass.insert(i, send_packet_class(self.list_of_MAC[i]))
             self.computer_on_btn[i].clicked.connect(self.list_of_packetClass[i].send_packet)
-            print('hihi' + self.list_of_packetClass[i].MAC)
 
 
 if __name__ == '__main__':

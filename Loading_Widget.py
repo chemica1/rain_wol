@@ -5,8 +5,6 @@ from PyQt5.QtCore import *
 
 
 class Loding_Widget(QWidget):
-    def __del__(self):
-        print("3가 없어졌어요!")
 
     def __init__(self, text="로딩중..."):
         super().__init__()
